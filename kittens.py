@@ -12,21 +12,10 @@ def get_random_cat():
     'DNT':'1'
     }
 
-    r = requests.get('https://www.google.com/search?q=cute+kitten&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjU353X9b7jAhVl5KYKHR3ZBIAQ_AUIESgB&biw=1920&bih=900',
+    request = requests.get('https://www.google.com/search?q=cute+kitten&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjU353X9b7jAhVl5KYKHR3ZBIAQ_AUIESgB&biw=1920&bih=900',
                     headers=headers)
-    k = r.text
-    pics = re.findall(r'"ou":"(https://[\w/\.]+?\.jpg)"', k)
+    request.text
+    pics = re.findall(r'"ou":"(https://[\w/\.]+?\.jpg)"', request.text)
     
     rand_pos = randint(0, len(pics) - 1)
     return pics[rand_pos]
-    
-#print(get_random_cat())
-
-'''
-with open ('test.txt', 'w') as f:
-    f.write(k)
-    
-print(pics)
-print(len(pics))
-print('https://i.pinimg.com/originals/db/ed/eb/dbedeb0633d33285a2819cfa3d325e40.jpg' in pics)
-'''

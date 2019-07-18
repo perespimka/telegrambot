@@ -31,21 +31,21 @@ class Bot():
         return answ
 
     
-x = Bot(token)   
+my_bot = Bot(token)   
 
 offset = None
 
 while True:
     try:
-        req = x.last_update(offset)
+        req = my_bot.last_update(offset)
         if req:
             if req['message']['text'].lower() == 'привет':
-                x.send_message(req['message']['chat']['id'], 'Дратути!')
+                my_bot.send_message(req['message']['chat']['id'], 'Дратути!')
             if req['message']['text'].lower() == 'кисик':
-                x.send_message(req['message']['chat']['id'], get_random_cat())
+                my_bot.send_message(req['message']['chat']['id'], get_random_cat())
             '''
             else:
-                x.send_message(req['message']['chat']['id'], 'Нипанятна')
+                my_bot.send_message(req['message']['chat']['id'], 'Нипанятна')
             '''
             offset = req['update_id'] + 1
             
