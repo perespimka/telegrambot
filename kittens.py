@@ -14,7 +14,7 @@ def get_random_cat():
 
     request = requests.get('https://www.google.com/search?q=cute+kitten&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjU353X9b7jAhVl5KYKHR3ZBIAQ_AUIESgB&biw=1920&bih=900',
                     headers=headers)
-    request.text
+    
     pics = re.findall(r'"ou":"(https://[\w/\.]+?\.jpg)"', request.text)
     
     rand_pos = randint(0, len(pics) - 1)
