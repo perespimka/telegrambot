@@ -1,13 +1,12 @@
 import requests
 from time import sleep
 from kittens import get_random_cat
+from my_token import token
 
-token = '984934638:AAE30Vi-Lyg_BJ4MBEPN_hXa63Vj1ZeByzc'
+
 prox = {'https' :  '195.122.185.95:3128',
         'SOCKS5' : '139.59.169.246:1080'
  }
-
-
 
 class Bot():
 
